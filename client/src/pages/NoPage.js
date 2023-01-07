@@ -1,12 +1,12 @@
 import React from "react";
+import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 
 const NoPage = () => {
   return (
-    <>
-      <h1 style={{ textAlign: "center", margin: "0 auto" }}>
-        404 Page Not Found
-      </h1>
-    </>
+    <div className="App-header notFound">
+      <SentimentVeryDissatisfiedIcon style={{ fontSize: "3em", margin: 0 }} />
+      <h1 style={{ margin: 0 }}>404 Page Not Found</h1>
+    </div>
   );
 };
 
