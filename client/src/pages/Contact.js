@@ -1,11 +1,12 @@
 import React from "react";
+import { Typography, Box } from "@mui/material";
 
 const Contact = () => {
   return (
     <>
-      <div className="App-header">
-        <h1>Contact</h1>
-      </div>
+      <Box className="App-header">
+        <Typography variant="h2">Contact</Typography>
+      </Box>
     </>
   );
 };

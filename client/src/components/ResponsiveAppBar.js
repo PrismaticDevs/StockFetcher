@@ -14,7 +14,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
-const pages = ["Contact"];
+const pages = ["Contact", "Stocks"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -37,7 +37,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar className="nav" position="static">
+    <AppBar className="nav" position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RequestQuoteIcon
