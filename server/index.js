@@ -5,8 +5,8 @@ const port = 8080;
 
 const options = {
   method: "GET",
-  url: "https://yh-finance.p.rapidapi.com/stock/v2/get-chart",
-  params: { interval: "5m", symbol: "AMRN", range: "1d", region: "US" },
+  url: "https://yh-finance.p.rapidapi.com/market/v2/get-movers",
+  params: { region: "US", lang: "en-US", count: "6", start: "0" },
   headers: {
     "X-RapidAPI-Key": "41cc1d1611msh1534c2dde21493ap123022jsn1922c68d8132",
     "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
@@ -20,7 +20,10 @@ const getData = async () => {
     .then((response) => {
       console.log(response.data, 22);
       fianceData = response.data;
-      console.log(fianceData, 24);
+      for (let i = 0; i < fianceData.length; i++) {
+        const element = fianceData[i];
+        console.log(element.chart, 25);
+      }
     })
     .catch((error) => {
       console.error(error);
@@ -28,7 +31,9 @@ const getData = async () => {
 };
 
 app.get("/stocks", async (req, res) => {
-  await getData().then(res.status(200).send(fianceData));
+  await getData();
+  fianceData = res.json(fianceData);
+  console.log("hi");
 });
 
 app.listen(port, () => {
