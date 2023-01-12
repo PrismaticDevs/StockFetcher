@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import Stocks from "./pages/Stocks";
+import Auth from "./components/Auth";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/stocks" element={<Stocks />} />
+        <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       <Footer />

@@ -5,11 +5,11 @@ const port = 8080;
 
 const options = {
   method: "GET",
-  url: "https://yh-finance.p.rapidapi.com/market/v2/get-movers",
-  params: { region: "US", lang: "en-US", count: "6", start: "0" },
+  url: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers",
+  params: { region: "US", lang: "en-US", start: "0", count: "6" },
   headers: {
     "X-RapidAPI-Key": "41cc1d1611msh1534c2dde21493ap123022jsn1922c68d8132",
-    "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
+    "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
   },
 };
 
@@ -20,10 +20,6 @@ const getData = async () => {
     .then((response) => {
       console.log(response.data, 22);
       fianceData = response.data;
-      for (let i = 0; i < fianceData.length; i++) {
-        const element = fianceData[i];
-        console.log(element.chart, 25);
-      }
     })
     .catch((error) => {
       console.error(error);

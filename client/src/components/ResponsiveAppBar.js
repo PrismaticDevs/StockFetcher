@@ -14,7 +14,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
-const pages = ["Contact", "Stocks"];
+const pages = ["Contact", "Stocks", "Auth"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -93,10 +93,7 @@ const ResponsiveAppBar = () => {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link
-                      style={{ textDecoration: "none", color: "white" }}
-                      to={`/${page}`}
-                    >
+                    <Link style={{ textDecoration: "none" }} to={`/${page}`}>
                       {page}
                     </Link>
                   </Typography>
